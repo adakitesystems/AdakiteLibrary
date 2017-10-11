@@ -33,7 +33,7 @@ public final class Adakite {
 
   public static final String LIB_AUTHOR = "Adakite";
   public static final String LIB_NAME = "AdakiteLibrary";
-  public static final Version LIB_VER = new Version(0, 4, 0, Version.Status.ALPHA);
+  public static final Version LIB_VER = new Version(0, 4, 1, Version.Status.ALPHA);
 
   private Adakite() {}
 

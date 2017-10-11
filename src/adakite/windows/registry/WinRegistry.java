@@ -21,6 +21,7 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 ////////////////////////////////////////////////////////////////////////////////
+
 package adakite.windows.registry;
 
 import adakite.util.AdakiteUtils;
@@ -36,7 +37,7 @@ import java.util.List;
 /**
  * Class for handling Windows Registry operations.
  */
-public class WinRegistry {
+public final class WinRegistry {
 
   public enum Subtree {
     HKEY_CLASSES_ROOT,

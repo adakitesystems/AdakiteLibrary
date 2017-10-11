@@ -37,12 +37,12 @@ import java.util.List;
  * handle errors such that if the specified program does not successfully
  * terminate itself.
  */
-public class SimpleProcess implements Runnable {
+public final class SimpleProcess implements Runnable {
 
   private final Path file;
   private final String[] args;
-  private List<String> stdoutLog;
-  private List<String> stderrLog;
+  private final List<String> stdoutLog;
+  private final List<String> stderrLog;
 
   public SimpleProcess(Path path, String[] args) {
     this.file = path;

@@ -45,8 +45,6 @@ public final class DirectoryMonitor {
   private List<Path> newFiles;
   private List<String> ignoreList;
 
-  private DirectoryMonitor() {}
-
   public DirectoryMonitor(Path directory) {
     this.path = directory;
     this.prevFiles = new ArrayList<>();

@@ -24,7 +24,7 @@
 
 package adakite.bihashmap.exception;
 
-public class DuplicateMappingException extends Exception {
+public final class DuplicateMappingException extends Exception {
 
   public DuplicateMappingException() {
     super();

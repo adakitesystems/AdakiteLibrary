@@ -34,7 +34,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public final class Settings {
 
-  private ConcurrentHashMap<String, String> settings;
+  private final ConcurrentHashMap<String, String> settings;
 
   public Settings() {
     this.settings = new ConcurrentHashMap<>();

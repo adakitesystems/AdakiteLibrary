@@ -24,7 +24,7 @@
 
 package adakite.windows.registry.exception;
 
-public class RegistryQueryException extends Exception {
+public final class RegistryQueryException extends Exception {
 
   public RegistryQueryException() {
     super();

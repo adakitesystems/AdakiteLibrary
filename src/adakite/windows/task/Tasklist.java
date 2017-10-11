@@ -42,7 +42,7 @@ import java.util.logging.Logger;
  * Class for getting and storing a list of processes using
  * the Windows Tasklist program.
  */
-public class Tasklist {
+public final class Tasklist {
 
   private static final Logger LOGGER = Logger.getLogger(Tasklist.class.getName());
 
@@ -77,7 +77,7 @@ public class Tasklist {
 
   }
 
-  private List<Task> tasks;
+  private final List<Task> tasks;
 
   public Tasklist() {
     this.tasks = new ArrayList<>();

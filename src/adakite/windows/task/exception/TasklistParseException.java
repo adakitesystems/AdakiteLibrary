@@ -24,7 +24,7 @@
 
 package adakite.windows.task.exception;
 
-public class TasklistParseException extends Exception {
+public final class TasklistParseException extends Exception {
 
   public TasklistParseException() {
     super();

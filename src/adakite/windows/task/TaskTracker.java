@@ -21,6 +21,7 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 ////////////////////////////////////////////////////////////////////////////////
+
 package adakite.windows.task;
 
 import adakite.windows.task.exception.TasklistParseException;
@@ -31,11 +32,11 @@ import java.util.List;
 /**
  * Class for tracking newly created tasks in the Windows Tasklist.
  */
-public class TaskTracker {
+public final class TaskTracker {
 
-  private Tasklist previousTasklist;
-  private Tasklist currentTasklist;
-  private List<Task> newTasks;
+  private final Tasklist previousTasklist;
+  private final Tasklist currentTasklist;
+  private final List<Task> newTasks;
 
   public TaskTracker() {
     this.previousTasklist = new Tasklist();

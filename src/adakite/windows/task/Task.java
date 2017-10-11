@@ -29,7 +29,7 @@ import java.util.Objects;
 /**
  * Container class for process information obtained from Windows Tasklist.
  */
-public class Task {
+public final class Task {
 
   private String imageName;
   private String pid;

@@ -24,7 +24,7 @@
 
 package adakite.windows.registry;
 
-public class RegEntry {
+public final class RegEntry {
 
   public enum Type {
     REG_SZ,       /* String */

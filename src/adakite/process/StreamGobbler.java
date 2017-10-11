@@ -33,10 +33,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public final class StreamGobbler implements Runnable {
 
-    private InputStream inputStream;
-    private CopyOnWriteArrayList<String> gobbledOutput;
-
-    private StreamGobbler() {}
+    private final InputStream inputStream;
+    private final CopyOnWriteArrayList<String> gobbledOutput;
 
     public StreamGobbler(InputStream inputStream) {
       this.inputStream = inputStream;
