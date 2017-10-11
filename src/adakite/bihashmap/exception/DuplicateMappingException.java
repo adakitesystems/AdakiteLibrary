@@ -21,18 +21,16 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 ////////////////////////////////////////////////////////////////////////////////
-package adakite.exception;
 
-/**
- * Directory version of {@link java.io.FileNotFoundException}.
- */
-public final class DirectoryNotFoundException extends Exception {
+package adakite.bihashmap.exception;
 
-  public DirectoryNotFoundException() {
+public class DuplicateMappingException extends Exception {
+
+  public DuplicateMappingException() {
     super();
   }
 
-  public DirectoryNotFoundException(String message) {
+  public DuplicateMappingException(String message) {
     super(message);
   }
 
