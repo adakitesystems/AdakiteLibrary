@@ -65,7 +65,7 @@ public final class Checksum {
   }
 
   /**
-   * Returns the shecksum of the specified file.
+   * Returns the checksum of the specified file.
    *
    * @throws IOException if an I/O error occurs
    * @throws NoSuchAlgorithmException if the cryptographic algorithm is not available
