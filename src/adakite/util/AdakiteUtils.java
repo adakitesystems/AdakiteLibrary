@@ -35,6 +35,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Utitilies class for useful or wrapped variables and methods.
@@ -417,6 +418,25 @@ public final class AdakiteUtils {
       }
     }
     return false;
+  }
+
+  /**
+   * Formats the specified string as a sentence by ensuring the first
+   * character is uppercase and the last character is a period.
+   *
+   * @param str specified string
+   * @param locale specified locale to use when converting to uppercase.
+   */
+  public static String formatAsSentence(String str, Locale locale) {
+    String firstChar = ("" + str.charAt(0)).toUpperCase(locale);
+    String ret = firstChar + str.substring(1, str.length());
+
+    String lastChar = "" + str.charAt(str.length() - 1);
+    if (!lastChar.equals(".")) {
+      ret += ".";
+    }
+
+    return ret;
   }
 
 }
