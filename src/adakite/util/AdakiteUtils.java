@@ -243,6 +243,63 @@ public final class AdakiteUtils {
     return path.getParent();
   }
 
+  public static Path getCommonDirectory(Path[] paths) {
+    /* Tokenize each directory path. */
+    String[][] tokenLists = new String[paths.length][];
+    for (int i = 0; i < paths.length; ++i) {
+      Path current;
+      Path p = paths[i];
+      if (AdakiteUtils.fileExists(p)) {
+        Path parent = AdakiteUtils.getParentDirectory(p);
+        if (parent == null) {
+          return null;
+        }
+        current = parent;
+      } else if (AdakiteUtils.directoryExists(p)) {
+        current = p;
+      } else {
+        /* Directory name is null and therefore the paths cannot have a common directory. */
+        return null;
+      }
+      tokenLists[i] = current.toAbsolutePath().toString().split("\\\\");
+    }
+
+    /* Determine the minimum directory depth. */
+    int minimumDepth = Integer.MAX_VALUE;
+    for (String[] list : tokenLists) {
+      if (list.length < minimumDepth) {
+        minimumDepth = list.length;
+      }
+    }
+
+    Path ret = null;
+
+    /* Determine the common directory. */
+    int minimumMatchCount = Integer.MAX_VALUE;
+    for (int i = 0; i < tokenLists.length; ++i) {
+      for (int j = 0; j < tokenLists.length; ++j) {
+        if (i == j) {
+          continue;
+        }
+        int currentMatchCount = 0;
+        for (int n = 0; n < minimumDepth; ++n) {
+          if (tokenLists[i][n].equalsIgnoreCase(tokenLists[j][n])) {
+            ++currentMatchCount;
+          }
+        }
+        if (currentMatchCount < minimumMatchCount) {
+          minimumMatchCount = currentMatchCount;
+          ret = Paths.get(tokenLists[i][0]);
+          for (int a = 1; a < minimumMatchCount; ++a) {
+            ret = Paths.get(ret.toString(), tokenLists[i][a]);
+          }
+        }
+      }
+    }
+
+    return ret;
+  }
+
   /**
    * Returns a list of all files and subdirectories recursively. Only
    * supports regular files and directories.
